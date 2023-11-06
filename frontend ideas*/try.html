@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-        <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="swiper-bundle.min.css">
+        <link rel="stylesheet" href="style.css">
 
         <title>Southern Sanandreas Super Autos</title>
     </head>
@@ -63,7 +63,7 @@
                         <i class="ri-wireless-charging-fill"></i> Electric Car
                     </h3>
                 </div>
-                <img src="assets/img/volvoelec.png" alt="" class="home__img">
+                <img src="volvoelec.png" alt="" class="home__img">
                 <div class="home__car">
                     <div class="home__car-data">
                         <div class="home__car-icon">
@@ -124,9 +124,9 @@
                     Choose Your First Electic Car 
                 </h2>
 
-                <div class="popular__container container">
-                    <div>
-                        <article class="popular__card">
+                <div class="popular__container container swiper">
+                    <div class="swiper-wrapper">
+                        <article class="popular__card swiper-slide">
                             <div class="shape shape__smaller"></div>
 
                             <h1 class="popular__title"> Volvo</h1>
@@ -150,7 +150,7 @@
                                 <i class="ri-store-3-line"></i>
                             </button>
                         </article>
-                        <article class="popular__card">
+                        <article class="popular__card swiper-slide">
                             <div class="shape shape__smaller"></div>
 
                             <h1 class="popular__title"> Volvo</h1>
@@ -174,7 +174,7 @@
                                 <i class="ri-store-3-line"></i>
                             </button>
                         </article>
-                        <article class="popular__card">
+                        <article class="popular__card swiper-slide">
                             <div class="shape shape__smaller"></div>
 
                             <h1 class="popular__title">Volvo</h1>
@@ -198,7 +198,7 @@
                                 <i class="ri-store-3-line"></i>
                             </button>
                         </article>
-                        <article class="popular__card">
+                        <article class="popular__card swiper-slide">
                             <div class="shape shape__smaller"></div>
 
                             <h1 class="popular__title">Volvo</h1>
@@ -222,7 +222,7 @@
                                 <i class="ri-store-3-line"></i>
                             </button>
                         </article>
-                        <article class="popular__card">
+                        <article class="popular__card swiper-slide">
                             <div class="shape shape__smaller"></div>
 
                             <h1 class="popular__title">Volvo</h1>
@@ -247,17 +247,75 @@
                             </button>
                         </article>
                     </div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
 
 
             <section class="features section">
-                
+                <h2 class="section__title">
+                    More Features
+                </h2>
+
+                <div class="features__container container grid">
+                    <div class="features__group">
+                        <img src="https://www.volvocars.com/images/v/-/media/project/contentplatform/data/media/pdp/xc90-fuel/xc90-gallery-1-1x1.jpg?h=1080&iar=0&w=1080" alt="" class="features__img">
+                        <div class="features__card features__card-1">
+                            <h3 class="features__card-title">832V</h3>
+                            <p class="features__card-description">Turbo <br> Charging</p>
+                        </div>
+                        <div class="features__card features__card-2">
+                            <h3 class="features__card-title">350</h3>
+                            <p class="features__card-description">KM <br> Range</p>
+                        </div>
+                        <div class="features__card features__card-3">
+                            <h3 class="features__card-title">400</h3>
+                            <p class="features__card-description">KM/h <br> Travel</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
             <section class="featured section" id="featured">
-                
+                <h2 class="section__title">More Models To Browse From</h2>
+
+                <div class="featured__container container">
+                    <ul class="featured__filters">
+                        <li>
+                            <button class="featured__item">
+                                <span>All<span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item">
+                                <img src="logo3.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item">
+                                <img src="logo2.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item">
+                                <img src="logo1.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="featured__content grid">
+                        <article class="featured__card">
+                            <div class="shape shape__smaller"></div>
+
+                            <h1 class="featured__title"></h1>
+                            <h3 class="featured__subtitle"></h3>
+                            <img src="" alt="" class="featured__img">
+                        </article>
+                    </div>
+                </div>
+
             </section>
 
 
@@ -284,12 +342,12 @@
         <script src=""></script>
 
 
-        <script src=""></script>
+        <script src="swiper-bundle.min.js"></script>
 
 
         <script src=""></script>
 
 
-        <script src="assets/js/main.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
