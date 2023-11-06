@@ -1,12 +1,19 @@
 Car Showroom Management System
+
 Welcome to the Car Showroom Management System, a web-based application designed to streamline the operations of your car showroom. This README provides an overview of the system and its key features.
 
 Table of Contents
+
 •	Introduction
+
 •	Key Features
+
 •	Getting Started
+
 •	User Guide
+
 •	Reporting and Analytics
+
 •	User Roles and Permissions
 
 Introduction
