@@ -29,5 +29,5 @@ Reporting and Analytics
 •	Get real-time data on inventory status, sales performance, and customer behavior.
 •	Use reports to make informed business decisions.
 
-
+![image](https://github.com/Bhavesh-Kapur/Car-Showroom-Management-System/assets/143421234/4d8a79e5-b491-4a5f-bf44-4cb68ff6f5aa)
 
