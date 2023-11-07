@@ -44,8 +44,6 @@ The Car Showroom Management System is a web-based application that simplifies th
 
 •	Streamline the sales process by creating and managing sales records.
 
-•	Generate invoices and receipts for customers.
-
 •	Keep track of the sales history and payments.
 
 
