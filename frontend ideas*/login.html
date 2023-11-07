@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Signup</title>
+    <style>
+        body {
+            background-image: url('volvo_car_image.jpg'); /* Replace 'volvo_car_image.jpg' with the path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for forms */
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin: 0 0 20px;
+            color: #333;
+        }
+
+        .container label {
+            font-weight: bold;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .container p {
+            margin: 10px 0 0;
+            color: #333;
+        }
+
+        .container .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="your_login_processing_script.py" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+        <p class="error">Invalid username or password.</p>
+    </div>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="your_signup_processing_script.py" method="post">
+            <label for="new-username">New Username</label>
+            <input type="text" id="new-username" name="new-username" required>
+            
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" name="new-password" required>
+            
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>
