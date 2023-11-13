@@ -1,8 +1,13 @@
 from django.db import models
 
 class Car(models.Model):
-    make = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
-    year = models.PositiveIntegerField()
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    year = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    # Add other fields for car details
+
+class Booking(models.Model):
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    client_name = models.CharField(max_length=255)
+    booking_date = models.DateField()
+
