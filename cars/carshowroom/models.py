@@ -10,4 +10,4 @@ class Booking(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
     client_name = models.CharField(max_length=255)
     booking_date = models.DateField()
-
+    rate=models.DecimalField(max_digits=10, decimal_places=2)

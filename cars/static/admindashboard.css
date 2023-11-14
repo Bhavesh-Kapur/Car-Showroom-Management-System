@@ -1,0 +1,97 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+header h2 {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+aside {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+}
+
+aside header {
+    font-size: 1.2em;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside ul li h4 {
+    margin-bottom: 10px;
+}
+
+aside ul ul {
+    margin-left: 15px;
+}
+
+aside a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 8px 0;
+}
+
+main {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.content-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}

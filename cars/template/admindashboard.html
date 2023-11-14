@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom Admin Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'admindashboard.css' %}">
+</head>
+<body>
+    
+    <header>
+        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
+        <h2>Welcome Admin</h2>
+        <a href="logout.html" class="btn">LogOut</a>
+    </header>
+
+    <aside>
+        <header>
+            <div>
+                <i class="fas fa-bars"></i>Dashboard
+            </div>
+        </header>
+        <ul>
+            <li><h4><i class="fas fa-car"></i>Inventory Management</h4></li>
+            <ul>
+                <li><a href="addcar.html"><i class="fa fa-car"></i>Add New Car</a></li>
+                <li><a href="viewinventory.html"><i class="fa fa-list"></i>View Inventory</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h4><i class="fas fa-shopping-cart"></i>Sales and Orders</h4></li>
+            <ul>
+                <li><a href="manageorders.html"><i class="fa fa-shopping-basket"></i>Manage Orders</a></li>
+                <li><a href="salesreport.html"><i class="fa fa-chart-bar"></i>Sales Report</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h4><i class="fas fa-users"></i>Customer Management</h4></li>
+            <ul>
+                <li><a href="addcustomer.html"><i class="fa fa-user-plus"></i>Add New Customer</a></li>
+                <li><a href="viewcustomers.html"><i class="fa fa-users"></i>View Customers</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h4><i class="fas fa-chart-line"></i>Analytics and Reporting</h4></li>
+            <ul>
+                <li><a href="/salesanalytics"><i class="fa fa-chart-line"></i>Sales Analytics</a></li>
+                <li><a href="inventoryreport.html"><i class="fa fa-file-alt"></i>Inventory Report</a></li>
+            </ul>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="content-container">
+            <!-- Content section will go here based on the selected option from the sidebar -->
+        </div>
+    </main>
+</body>
+</html>
