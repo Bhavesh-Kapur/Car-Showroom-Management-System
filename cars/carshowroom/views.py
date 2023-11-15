@@ -31,3 +31,7 @@ def addcustomer(request):
         # print(name,email,phone,address)
     
     return render(request,'addcustomer.html')
+
+
+def manageorders(request):
+    return render(request,'manageorders.html')
