@@ -14,3 +14,7 @@ def addcar(request):
         car=Car(make=make,model=model,year=year,price=price)
         car.save()
     return render(request,'addcar.html')
+
+
+def viewinventory(request):
+    return render(request,'viewinventory.html')

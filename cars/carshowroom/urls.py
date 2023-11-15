@@ -6,4 +6,5 @@ from carshowroom import views
 urlpatterns = [
     path('admindashboard', views.admindashboard, name='admindashboard'),
     path('addcar', views.addcar, name='addcar'),
+    path('viewinventory', views.viewinventory, name='viewinventory'),
 ]
