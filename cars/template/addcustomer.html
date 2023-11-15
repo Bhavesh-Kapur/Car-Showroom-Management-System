@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer - Car Showroom Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'addcustomer.css' %}">
+</head>
+<body>
+    
+    <header>
+        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
+        <h2>Welcome Admin</h2>
+        <a href="logout.html" class="btn">LogOut</a>
+        <a href="addcustomer.html" class="btn">Dashboard</a>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h2>Add New Customer</h2>
+
+            <form action="/addcustomer" method="post">
+                {% csrf_token %}
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+
+                <!-- Add more fields for other customer details -->
+
+                <button type="submit" class="btn">Add Customer</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
