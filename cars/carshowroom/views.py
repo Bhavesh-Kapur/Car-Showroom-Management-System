@@ -17,4 +17,9 @@ def addcar(request):
 
 
 def viewinventory(request):
-    return render(request,'viewinventory.html')
+    return render(request,'viewinventory.html
+
+
+def addcustomer(request):
+    
+    return render(request,'addcustomer.html')
