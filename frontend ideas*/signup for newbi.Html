@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #41B3B3;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: Black;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h2>Sign Up</h2>
+
+        <!-- 1) Name -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <!-- 2) Email -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- 3) Phone no. -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <!-- 4) State -->
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <!-- 5) City -->
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <!-- 6) Date of birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <!-- 7) Male/Female -->
+        <label>Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <!-- 8) Set a password -->
+        <label for="password">Set a Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="signUp()">Sign Up</button>
+    </form>
+
+    <script>
+        function signUp() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var state = document.getElementById("state").value;
+            var city = document.getElementById("city").value;
+            var dob = document.getElementById("dob").value;
+            var gender = document.getElementById("gender").value;
+            var password = document.getElementById("password").value;
+
+            // Perform client-side validation if needed
+
+            // Example: Redirect to a welcome page (replace with actual logic)
+            window.location.href = "welcome.html";
+        }
+    </script>
+
+</body>
+</html>
