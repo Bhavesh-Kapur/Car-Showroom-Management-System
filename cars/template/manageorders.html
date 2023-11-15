@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders - Car Showroom Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="manageorders.css">
+</head>
+<body>
+    
+    <header>
+        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
+        <h2>Welcome Admin</h2>
+        <a href="logout.html" class="btn">LogOut</a>
+        <a href="admindashboard.html" class="btn">Dashboard</a>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h2>Manage Orders</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Car Model</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                        <!-- Add more columns for other order details -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through your orders data and populate the table rows -->
+                    {% for order in orders %}
+                        <tr>
+                            <td>{{ order.order_id }}</td>
+                            <td>{{ order.customer_name }}</td>
+                            <td>{{ order.car_model }}</td>
+                            <td>{{ order.quantity }}</td>
+                            <td>${{ order.total_price }}</td>
+                            <td>{{ order.status }}</td>
+                            <!-- Add more columns for other order details -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

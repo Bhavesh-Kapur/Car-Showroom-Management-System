@@ -27,8 +27,8 @@
         <ul>
             <li><h4><i class="fas fa-car"></i>Inventory Management</h4></li>
             <ul>
-                <li><a href="addcar.html"><i class="fa fa-car"></i>Add New Car</a></li>
-                <li><a href="viewinventory.html"><i class="fa fa-list"></i>View Inventory</a></li>
+                <li><a href="{% url 'addcar' %}"><i class="fa fa-car"></i>Add New Car</a></li>
+                <li><a href="{% url 'viewinventory' %}"><i class="fa fa-list"></i>View Inventory</a></li>
             </ul>
         </ul>
         <ul>
@@ -41,7 +41,7 @@
         <ul>
             <li><h4><i class="fas fa-users"></i>Customer Management</h4></li>
             <ul>
-                <li><a href="addcustomer.html"><i class="fa fa-user-plus"></i>Add New Customer</a></li>
+                <li><a href="{% url 'addcustomer' %}"><i class="fa fa-user-plus"></i>Add New Customer</a></li>
                 <li><a href="viewcustomers.html"><i class="fa fa-users"></i>View Customers</a></li>
             </ul>
         </ul>
