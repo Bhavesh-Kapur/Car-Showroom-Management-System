@@ -30,6 +30,7 @@
                         <th>Model</th>
                         <th>Year</th>
                         <th>Image</th>
+                        <th>Price</th>
                         <!-- Add more columns for other car details -->
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                             <td>{{ car.model }}</td>
                             <td>{{ car.year }}</td>
                             <td><img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}"></td>
+                            <td>{{ car.price }}</td>
                             <!-- Add more columns for other car details -->
                         </tr>
                     {% endfor %}
