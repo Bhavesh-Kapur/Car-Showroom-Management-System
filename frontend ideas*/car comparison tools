@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Comparison Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .brand-container {
+            margin-bottom: 30px;
+        }
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .car-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .car {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .compare-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .compare-btn:hover {
+            background-color: #0056b3;
+        }
+        #comparison {
+            margin-top: 30px;
+        }
+        #comparison p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Car Comparison Tool</h2>
+
+    <!-- Toyota Brand -->
+    <div class="brand-container">
+        <div class="brand-name">Toyota</div>
+        <div class="car-list">
+            <div class="car">
+                <h3>Camry</h3>
+                <p>Price: $30,000</p>
+                <p>Engine: V6</p>
+                <p>Max Speed: 200 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('Toyota', 'Camry', '$30,000', 'V6', '200', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Corolla</h3>
+                <p>Price: $25,000</p>
+                <p>Engine: Inline-4</p>
+                <p>Max Speed: 180 km/h</p>
+                <p>Type: XUV</p>
+                <button onclick="addToComparison('Toyota', 'Corolla', '$25,000', 'Inline-4', '180', 'XUV')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Rav4</h3>
+                <p>Price: $35,000</p>
+                <p>Engine: Hybrid</p>
+                <p>Max Speed: 170 km/h</p>
+                <p>Type: XUV</p>
+                <button onclick="addToComparison('Toyota', 'Rav4', '$35,000', 'Hybrid', '170', 'XUV')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Highlander</h3>
+                <p>Price: $40,000</p>
+                <p>Engine: V6</p>
+                <p>Max Speed: 190 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('Toyota', 'Highlander', '$40,000', 'V6', '190', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BMW Brand -->
+    <div class="brand-container">
+        <div class="brand-name">BMW</div>
+        <div class="car-list">
+            <div class="car">
+                <h3>3 Series</h3>
+                <p>Price: $45,000</p>
+                <p>Engine: Inline-6</p>
+                <p>Max Speed: 240 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('BMW', '3 Series', '$45,000', 'Inline-6', '240', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>5 Series</h3>
+                <p>Price: $55,000</p>
+                <p>Engine: V8</p>
+                <p>Max Speed: 260 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('BMW', '5 Series', '$55,000', 'V8', '260', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>X3</h3>
+                <p>Price: $50,000</p>
+                <p>Engine: Inline-4</p>
+                <p>Max Speed: 220 km/h</p>
+                <p>Type: XUV</p>
+                <button onclick="addToComparison('BMW', 'X3', '$50,000', 'Inline-4', '220', 'XUV')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>X5</h3>
+                <p>Price: $65,000</p>
+                <p>Engine: V6</p>
+                <p>Max Speed: 230 km/h</p>
+                <p>Type: XUV</p>
+                <button onclick="addToComparison('BMW', 'X5', '$65,000', 'V6', '230', 'XUV')" class="compare-btn">Add to Compare</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Porsche Brand -->
+    <div class="brand-container">
+        <div class="brand-name">Porsche</div>
+        <div class="car-list">
+            <div class="car">
+                <h3>911</h3>
+                <p>Price: $100,000</p>
+                <p>Engine: Flat-6</p>
+                <p>Max Speed: 300 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('Porsche', '911', '$100,000', 'Flat-6', '300', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Cayman</h3>
+                <p>Price: $80,000</p>
+                <p>Engine: V6</p>
+                <p>Max Speed: 280 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('Porsche', 'Cayman', '$80,000', 'V6', '280', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Panamera</h3>
+                <p>Price: $90,000</p>
+                <p>Engine: V8</p>
+                <p>Max Speed: 260 km/h</p>
+                <p>Type: Luxury</p>
+                <button onclick="addToComparison('Porsche', 'Panamera', '$90,000', 'V8', '260', 'Luxury')" class="compare-btn">Add to Compare</button>
+            </div>
+            <div class="car">
+                <h3>Macan</h3>
+                <p>Price: $75,000</p>
+                <p>Engine: Inline-4</p>
+                <p>Max Speed: 240 km/h</p>
+                <p>Type: XUV</p>
+                <button onclick="addToComparison('Porsche', 'Macan', '$75,000', 'Inline-4', '240', 'XUV')" class="compare-btn">Add to Compare</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more brands and cars as needed -->
+
+    <h2>Comparison</h2>
+    <div id="comparison"></div>
+
+    <script>
+        function addToComparison(brand, model, price, engine, maxSpeed, type) {
+            var comparisonDiv = document.getElementById("comparison");
+            var comparisonHTML = "<p><strong>" + brand + " " + model + ":</strong></p>";
+            comparisonHTML += "<ul>";
+            comparisonHTML += "<li>Price: " + price + "</li>";
+            comparisonHTML += "<li>Engine: " + engine + "</li>";
+            comparisonHTML += "<li>Max Speed: " + maxSpeed + " km/h</li>";
+            comparisonHTML += "<li>Type: " + type + "</li>";
+            comparisonHTML += "</ul>";
+
+            comparisonDiv.innerHTML += comparisonHTML;
+        }
+    </script>
+
+</body>
+</html>
