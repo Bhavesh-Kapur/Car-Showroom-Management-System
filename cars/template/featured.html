@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Featured Cars - Southern Sanandreas MotorCorp</title>
-    <link rel="stylesheet" href="featured.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
+            <a href="{% url 'about' %}" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
             <ul class="nav-link">
-                <li><a href="about.html" style="--i:1;">Home</a></li>
-                <li><a href="catalog.html" style="--i:3;">Catalog</a></li>
-                <li><a href="featured.html" style="--i:4;" class="active">Featured</a></li>
+                <li><a href="{% url 'about' %}" style="--i:1;">Home</a></li>
+                <li><a href="{% url 'catalogue' %}" style="--i:3;">Catalog</a></li>
+                <li><a href="{% url 'featured' %}" style="--i:4;" class="active">Featured</a></li>
                 <li><a href="contact.html" style="--i:5;">Contact</a></li>
                 <li><a href="login.html" style="--i:6;">Login</a></li>
             </ul>
@@ -31,17 +32,17 @@
         <div class="container">
             <h2>Featured Cars of the Month</h2>
             <div class="car-card">
-                <img src="img/car-1.jpg" alt="Featured Car 1">
+                <img src="https://c4.wallpaperflare.com/wallpaper/964/55/742/mercedes-benz-mercedes-benz-vision-eqs-car-concept-car-electric-car-hd-wallpaper-preview.jpg" alt="Featured Car 1">
                 <h3>Car Model 1</h3>
                 <p>Description of the featured car. </p>
             </div>
             <div class="car-card">
-                <img src="img/car-2.jpg" alt="Featured Car 2">
+                <img src="https://4kwallpapers.com/images/wallpapers/audi-a6-avant-e-tron-concept-2022-3840x2160-7731.jpg" alt="Featured Car 2">
                 <h3>Car Model 2</h3>
                 <p>Description of the featured car.</p>
             </div>
             <div class="car-card">
-                <img src="img/car-3.jpg" alt="Featured Car 3">
+                <img src="https://www.hdcarwallpapers.com/download/bmw_xm_2023_4k-3840x2160.jpg" alt="Featured Car 3">
                 <h3>Car Model 3</h3>
                 <p>Description of the featured car.</p>
             </div>

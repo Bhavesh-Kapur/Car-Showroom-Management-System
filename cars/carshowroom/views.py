@@ -48,3 +48,7 @@ def about(request):
 
 def catalogue(request):
     return render(request,'catalogue.html')
+
+
+def featured(request):
+    return render(request,'featured.html')
