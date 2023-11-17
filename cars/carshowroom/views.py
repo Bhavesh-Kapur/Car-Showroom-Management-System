@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from carshowroom.models import Car,Customer
+from django.contrib import messages
+
 
 # Create your views here.
 def admindashboard(request):
@@ -13,11 +15,14 @@ def addcar(request):
         price=request.POST.get('price')
         car=Car(make=make,model=model,year=year,price=price)
         car.save()
+        messages.success(request, f'New Car added to inventory' ,extra_tags='posted')
     return render(request,'addcar.html')
 
 
 def viewinventory(request):
-    return render(request,'viewinventory.html')
+    cars=list(Car.objects.all())   #Cars.objects.filter(make='hyundai')
+    dic={'cars':cars}
+    return render(request,'viewinventory.html',dic)
 
 
 def addcustomer(request):
