@@ -4,6 +4,7 @@ from django.urls import path
 from carshowroom import views
 
 urlpatterns = [
+    path('', views.about, name='about'),
     path('admindashboard', views.admindashboard, name='admindashboard'),
     path('addcar', views.addcar, name='addcar'),
     path('viewinventory', views.viewinventory, name='viewinventory'),
