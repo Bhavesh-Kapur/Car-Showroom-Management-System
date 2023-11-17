@@ -15,11 +15,11 @@
         <!-- ..................Start Navbar................... -->
         <nav>
             <div class="container nav-container">
-                <a href="" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
+                <a href="{% url 'about' %}" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
                 <ul class="nav-link">
                     <li><a href="{% url 'about' %}" style="--i:1;" class="active">Home</a></li>
                     <li><a href="{% url 'catalogue' %}" style="--i:3;">Catalogue</a></li>
-                    <li><a href="" style="--i:4;">Feautred</a></li>
+                    <li><a href="{% url 'featured' %}" style="--i:4;">Feautred</a></li>
                     <li><a href="" style="--i:5;">Contact</a></li>
                     <li><a href="" style="--i:5;">Login</a></li>
                 </ul>
