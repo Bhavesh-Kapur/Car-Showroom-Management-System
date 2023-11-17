@@ -40,3 +40,8 @@ def addcustomer(request):
 
 def manageorders(request):
     return render(request,'manageorders.html')
+
+
+
+def about(request):
+    return render(request,'about.html')
