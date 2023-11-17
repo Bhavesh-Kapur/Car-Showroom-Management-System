@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated  cars Website</title>
     <!-- ..................Custom Css Link................... -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <!-- ..................FontAwesome Link................... -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -46,7 +47,7 @@
                 </div>
                 <div class="header-right">
                     <div class="sq-box">
-                        <img src="2019_bugatti_divo_4k_6-3840x2160.png" alt="" class="carimg" >
+                        <img src="{% static '2019_bugatti_divo_4k_6-3840x2160.png' %}" alt="" class="carimg" >
                     </div>
                 </div>
             </div>
