@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        .car-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .car-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Car Showroom Management System</h1>
+    </header>
+
+    <section>
+        <h2>Available Cars</h2>
+        <div class="car-list" id="carList">
+            <!-- Car cards will be dynamically added here -->
+        </div>
+    </section>
+
+    <script>
+        // Dummy data for demonstration purposes
+        const cars = [
+            { id: 1, make: 'Toyota', model: 'Camry', year: 2022, price: 25000 },
+            { id: 2, make: 'Honda', model: 'Civic', year: 2022, price: 22000 },
+            { id: 3, make: 'Ford', model: 'Fusion', year: 2022, price: 23000 }
+        ];
+
+        // Function to render car cards
+        function renderCars() {
+            const carList = document.getElementById('carList');
+            carList.innerHTML = '';
+
+            cars.forEach(car => {
+                const card = document.createElement('div');
+                card.className = 'car-card';
+                card.innerHTML = `
+                    <h3>${car.make} ${car.model}</h3>
+                    <p>Year: ${car.year}</p>
+                    <p>Price: $${car.price}</p>
+                `;
+                carList.appendChild(card);
+            });
+        }
+
+        // Initial rendering
+        renderCars();
+    </script>
+</body>
+</html>
