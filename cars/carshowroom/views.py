@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from carshowroom.models import Car,Customer
+from carshowroom.models import Car,Customer,Query
 from django.contrib import messages
 
 
@@ -52,3 +52,17 @@ def catalogue(request):
 
 def featured(request):
     return render(request,'featured.html')
+
+
+
+def contact(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        phone=request.POST.get('phone')
+        doubt=request.POST.get('message')
+        query=Query(name=name,phone=phone,email=email,doubt=doubt)
+        query.save()
+        messages.success(request, f'Query Submitted Sucessfully' ,extra_tags='posted')
+        print(name,email,phone,doubt)
+    return render(request,'contact.html')

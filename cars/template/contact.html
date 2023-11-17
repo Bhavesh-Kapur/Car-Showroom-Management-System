@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Southern Sanandreas MotorCorp</title>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
+            <a href="{% url 'about' %}" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
             <ul class="nav-link">
-                <li><a href="index.html" style="--i:1;">Home</a></li>
-                <li><a href="about.html" style="--i:2;">About</a></li>
-                <li><a href="catalog.html" style="--i:3;">Catalog</a></li>
-                <li><a href="featured.html" style="--i:4;">Featured</a></li>
-                <li><a href="contact.html" style="--i:5;" class="active">Contact</a></li>
+                <li><a href="{% url 'about' %}" style="--i:1;">Home</a></li>
+                <li><a href="{% url 'catalogue' %}" style="--i:3;">Catalog</a></li>
+                <li><a href="{% url 'featured' %}" style="--i:4;">Featured</a></li>
+                <li><a href="{% url 'contact' %}" style="--i:5;" class="active">Contact</a></li>
                 <li><a href="login.html" style="--i:6;">Login</a></li>
             </ul>
             <ul class="social-link">
@@ -32,12 +32,16 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>Have questions or need assistance? Reach out to us!</p>
-            <form action="submit_contact_form.php" method="post">
+            <form action="contact" method="post">
+                {% csrf_token %}
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required>
+
+                <label for="phone">Your Phone No.:</label>
+                <input type="number" id="phone" name="phone" required>
 
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
