@@ -45,19 +45,20 @@
     <section>
         <h2>Available Cars</h2>
         <div class="car-list" id="carList">
-            <!-- Car cards will be dynamically added here -->
         </div>
     </section>
 
     <script>
-        // Dummy data for demonstration purposes
         const cars = [
-            { id: 1, make: 'Toyota', model: 'Camry', year: 2022, price: 25000 },
-            { id: 2, make: 'Honda', model: 'Civic', year: 2022, price: 22000 },
-            { id: 3, make: 'Ford', model: 'Fusion', year: 2022, price: 23000 }
+            { id: 1, make: 'Toyota', model: 'Camry', year: 2022, price: 2500000 },
+            { id: 2, make: 'Honda', model: 'Civic', year: 2022, price: 2200000 },
+            { id: 3, make: 'Ford', model: 'Fusion', year: 2022, price: 2300000 }
         ];
 
-        // Function to render car cards
+        function formatCurrencyINR(price) {
+            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(price);
+        }
+
         function renderCars() {
             const carList = document.getElementById('carList');
             carList.innerHTML = '';
@@ -68,13 +69,12 @@
                 card.innerHTML = `
                     <h3>${car.make} ${car.model}</h3>
                     <p>Year: ${car.year}</p>
-                    <p>Price: $${car.price}</p>
+                    <p>Price: ${formatCurrencyINR(car.price)}</p>
                 `;
                 carList.appendChild(card);
             });
         }
 
-        // Initial rendering
         renderCars();
     </script>
 </body>
