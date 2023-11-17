@@ -17,9 +17,8 @@
             <div class="container nav-container">
                 <a href="" class="logo"><h3>Southern Sanandreas MotorCorp</h3></a>
                 <ul class="nav-link">
-                    <li><a href="" style="--i:1;" class="active">Home</a></li>
-                    <li><a href="" style="--i:2;">About</a></li>
-                    <li><a href="catalog.html" style="--i:3;">Catalog</a></li>
+                    <li><a href="{% url 'about' %}" style="--i:1;" class="active">Home</a></li>
+                    <li><a href="{% url 'catalog' %}" style="--i:3;">Catalog</a></li>
                     <li><a href="" style="--i:4;">Feautred</a></li>
                     <li><a href="" style="--i:5;">Contact</a></li>
                     <li><a href="" style="--i:5;">Login</a></li>
@@ -39,11 +38,11 @@
             <div class="container header-container">
                 <div class="header-left">
                     <h1>Car Dealing Experience.</h1>
-                    <h3>Readfinde!</h3>
+                    <h3>Redefined!!</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis est illo <br> nisi  magni ea distinctio ab quibusdam rem qui ex? Quisquam ipsum quaear <br> sint eos alias rem sequi repellendus culpa?
+                        Explore automotive excellence at Southern Sanandreas MotorCorp., where cutting-edge design meets unrivaled performance. Discover a curated collection of the finest cars, tailored for enthusiasts who demand nothing but the best. Your journey to automotive luxury starts here.
                     </p>
-                    <a href="test.html" class="btn">Explore Cars</a>
+                    <a href="{% url 'catalog' %}" class="btn">Explore Cars</a>
                 </div>
                 <div class="header-right">
                     <div class="sq-box">
