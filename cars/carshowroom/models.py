@@ -5,6 +5,7 @@ class Car(models.Model):
     model = models.CharField(max_length=100)
     year = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    img = models.ImageField(upload_to="images/", null=True, default=None)
 
 class Booking(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from carshowroom.models import Car,Customer,Query
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -10,14 +10,28 @@ def admindashboard(request):
 
 def addcar(request):
     if request.method=='POST':
-        make=request.POST.get('make')
-        model=request.POST.get('model')
-        year=request.POST.get('year')
-        price=request.POST.get('price')
-        car=Car(make=make,model=model,year=year,price=price)
-        car.save()
+        c = Car()
+        c.make = request.POST.get('make')
+        c.model = request.POST.get('model')
+        c.year = request.POST.get('year')
+        c.price = request.POST.get('price')
+
+        if len(request.FILES)!= 0:
+            c.img = request.FILES['image']
+        c.save()
         messages.success(request, f'New Car added to inventory' ,extra_tags='posted')
-    return render(request,'addcar.html')
+        # return redirect('/')
+    return render(request, 'addcar.html')
+
+    #     make=request.POST.get('make')
+    #     model=request.POST.get('model')
+    #     year=request.POST.get('year')
+    #     price=request.POST.get('price')
+    #     img=request.POST.get('image')
+    #     car=Car(make=make,model=model,year=year,price=price,img=img)
+    #     car.save()
+    #     
+    # return render(request,'addcar.html')
 
 
 def viewinventory(request):
