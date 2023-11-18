@@ -12,6 +12,11 @@
     --color-dark: #333; 
     --color-black: #222; 
 }
+
+body {
+    overflow-x: hidden;
+}
+
 .btn{
     display: inline-block;
     width: fit-content;
@@ -42,7 +47,7 @@
 nav{
     width: 100%; 
     height: 5rem;
-    position: fixed;
+    position:fixed;
     left: 0;
     top: 0;
     z-index: 100;
@@ -53,6 +58,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 .nav-container ul{
     display: flex;
@@ -65,7 +71,18 @@ nav{
     opacity: 0;
     animation: logoAni 1s ease forwards;   
 }
+
+.navspace{
+    margin-left: -250px;
+}
+
+.logoname{
+    margin-left: -50px;
+}
 .nav-link li a{
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
+    margin: auto;
     color: var(--color-black);
     font-size: 17px;
     transition: .4s ease;
@@ -276,7 +293,8 @@ header{
     padding: 10px; 
 } */
 
-/*-------------------------Catalog css-----------------------*/
+
+/* -------------Catalog CSS--------------- */
 .catalog {
     margin-top: 50px;
     padding: 80px 0;
@@ -354,6 +372,8 @@ header{
     transform: scale(1.1);
 } */ 
 
+
+/* ... (your existing CSS code) ... */
 /* -------------Featured html css------------------ */
 .featured-cars {
     animation: sqbox2Ani forwards 2.5s ease;
@@ -466,5 +486,10 @@ button:hover {
 .login-section:hover {
     background-color: #ddd;
 }
+
+
+
+
+
 
 
