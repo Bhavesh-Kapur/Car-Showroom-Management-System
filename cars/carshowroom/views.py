@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from carshowroom.models import Car,Customer,Query
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from django.contrib.auth.models import User
 
 # Create your views here.
 def admindashboard(request):
@@ -72,6 +73,21 @@ def login(request):
     return render(request, 'login.html')
 
 
+
 def adminlogin(request):
     return render(request, 'adminlogin.html')
-    
+
+# def adminlogin(request):
+#     if not request.user.is_anonymous:
+#         return redirect("admindashboard")
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         user = authenticate(request, username=username, password=password)
+
+#         if user is not None:
+#             login(request, user)
+#             return redirect('admindashboard')
+#         return render(request, 'adminlogin.html', {'error_message': 'Invalid credentials'})
+
+#     return render(request, 'adminlogin.html')
