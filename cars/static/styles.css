@@ -430,3 +430,41 @@ button:hover {
     background-color: var(--color-dark);
 }
 
+
+/* ---------------login page css-------------- */
+
+
+.login {
+    padding: 200px 0;
+}
+
+.login-box {
+    max-width: 500px;
+    /* margin: 0 auto; */
+    margin-left: 550px;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.login-section {
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    display: block;
+    color: var(--color-dark);
+}
+
+.login-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-section:hover {
+    background-color: #ddd;
+}
+
+
