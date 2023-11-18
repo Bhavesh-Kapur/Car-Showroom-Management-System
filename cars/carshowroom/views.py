@@ -66,3 +66,7 @@ def contact(request):
         messages.success(request, f'Query Submitted Sucessfully' ,extra_tags='posted')
         print(name,email,phone,doubt)
     return render(request,'contact.html')
+
+
+def login(request):
+    return render(request, 'login.html')
