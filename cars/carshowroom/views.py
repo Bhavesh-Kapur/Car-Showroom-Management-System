@@ -70,3 +70,8 @@ def contact(request):
 
 def login(request):
     return render(request, 'login.html')
+
+
+def adminlogin(request):
+    return render(request, 'adminlogin.html')
+    

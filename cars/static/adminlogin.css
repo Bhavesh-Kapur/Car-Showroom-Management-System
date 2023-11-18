@@ -1,0 +1,500 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+:root{
+    --color-primary: #181717;
+    --color-white: #ffffff; 
+    --color-dark: #333; 
+    --color-black: #222; 
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    letter-spacing: .4px;
+    font-weight: 600;
+    transition: .4s ease;
+    opacity: 0;
+    animation: logoAni 1s ease forwards; 
+    animation-delay: 1.3s;
+}
+.btn:hover{
+    background: transparent;
+    color: var(--color-primary);
+}
+.container{
+    max-width: 1620px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* .......................Start Nav Bar...................... */
+nav{
+    width: 100%; 
+    height: 5rem;
+    position:fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav-container ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.logo h3{
+    font-size: 25px;
+    color: var(--color-black); 
+    opacity: 0;
+    animation: logoAni 1s ease forwards;   
+}
+
+.navspace{
+    margin-right: 791px;
+}
+
+.logoname{
+    margin-left: -50px;
+}
+.nav-link li a{
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
+    margin: auto;
+    color: var(--color-black);
+    font-size: 17px;
+    transition: .4s ease;
+    display: inline-block;
+    animation: NavliaAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;    
+}
+.nav-link li a:hover{
+    color: var(--color-primary);
+}
+.nav-link li .active{
+    color: var(--color-primary);
+}
+.social-link li a{
+    height: 40px;
+    width: 40px; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -15px;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: .4s ease;   
+    animation: socialAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;    
+}
+.social-link li a:hover{
+    border-color: var(--color-white);
+}
+.social-link li a i{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    color: var(--color-white);
+}
+/* .......................End Nav Bar...................... */
+
+
+/* .......................Start Header Section...................... */
+header{
+    width: 100;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-left{
+    max-width: 620px;
+    position: relative;
+}
+.header-left h1{
+    font-size: 54px;
+    line-height: 1.2;
+    color: var(--color-black);
+    animation: H1Ani forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: 1s;  
+}
+.header-left h3{
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-top: .5rem;
+    animation: H1Ani forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .8s;  
+}
+.header-left p{
+    margin: 15px 0 30px;
+    line-height: 150%;
+    font-size: 16px;
+    animation: logoAni forwards 1s ease;  
+    opacity: 0;    
+    animation-delay: .6s; 
+}
+.header-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center; 
+    height: 100%; 
+    justify-content: space-between;
+}
+.header-right{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+
+    right: -7%;   
+}
+.sq-box{
+    height: 100%;
+    width: 100%;
+    border: 25px solid var(--color-primary);
+    background: var(--color-white);
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2) ;
+    opacity: 0;
+    animation: zoomOut 1s ease forwards; 
+    animation-delay: 1.3s;
+}
+.sq-box img{
+    position: absolute;
+    transform: rotate(-45deg);
+    max-width: 800px;
+    top: 8px;
+    left: -170px;
+    opacity: 0;
+    animation: carAni forwards 1s ease;
+    animation-delay: 1.6s;
+    /* margin-top: 190px; */
+}
+.sq-box2{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: var(--color-primary);
+    transform: rotate(45deg);
+    top: -26%;
+    right: -26%;
+    z-index: -1;
+    opacity: 0;
+    animation: sqbox2Ani forwards 1s ease;
+    animation-delay: .3s;
+}
+/* .......................End Header Section...................... */
+
+
+
+/* .......................Animation Start...................... */
+@keyframes logoAni {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }    
+}
+@keyframes NavliaAni {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }    
+}
+@keyframes socialAni {
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }    
+}
+@keyframes H1Ani {
+    0%{
+        transform: translateY(-100px) ;
+        opacity: 0;
+    }    
+    100%{
+        transform: translateY(0) ;
+        opacity: 1;
+    }    
+}
+@keyframes zoomOut {
+    0%{
+        transform:scale(1.1) ;
+        opacity: 0;
+    }    
+    100%{
+        transform: scale(1) ;
+        opacity: 1;
+    }    
+}
+@keyframes carAni {
+    0%{
+        transform: translate(180px, -300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }    
+    100%{
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }    
+}
+@keyframes sqbox2Ani {
+    0%{
+        right: -40%;
+        opacity: 0;
+    }    
+    100%{
+        right: -26%;
+        opacity: 1;
+    }    
+}
+
+/* .......................End Animation...................... */
+/* 
+.carimg{
+    background-color: white;
+    padding: 10px; 
+} */
+
+
+/* -------------Catalog CSS--------------- */
+.catalog {
+    margin-top: 50px;
+    padding: 80px 0;
+    text-align: center;
+    /* animation: NavliaAni forwards 2s ease; */
+    animation: sqbox2Ani forwards 2s ease;
+    /* animation: logoAni 2s ease forwards; */
+    /* animation-delay: calc(.2s * var(--i)); */
+    
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.brand-logos img {
+    width: 270px;
+    height: 180px;
+    margin: 100px;
+    
+    margin-bottom: 20px;
+    border: 2px solid var(--color-dark);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.brand-name {
+    display:block;
+    margin-top: 1px;
+    font-size: 14px;
+    color: var(--color-dark);
+}
+
+.brand-item {
+    text-align: center;
+}
+
+.brand-logos img:hover {
+    transform: scale(1.1);
+}
+
+
+/* .brand-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.brand-logos a {
+    text-align: center;
+}
+
+.brand-logos img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 5px;
+    border: 2px solid var(--color-dark);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .brand-name {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--color-dark);
+} */
+
+/* .brand-logos img:hover {
+    transform: scale(1.1);
+} */ 
+
+
+/* ... (your existing CSS code) ... */
+/* -------------Featured html css------------------ */
+.featured-cars {
+    animation: sqbox2Ani forwards 2.5s ease;
+    padding: 90px 0;
+    text-align: center;
+}
+
+.car-card {
+    margin-top: 60px;
+}
+
+.car-card img {
+    width: 500px;
+    max-width: 500px;
+    border-radius: 56px;
+    margin-bottom: 20px;
+}
+
+.car-card h3 {
+    font-size: 24px;
+    color: var(--color-dark);
+}
+
+.car-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-dark);
+}
+
+/* ---------------- Contact form css--------------- */
+
+
+
+.contact {
+    animation: sqbox2Ani forwards 2.5s ease;
+    padding: 100px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+    font-size: 16px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid var(--color-dark);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-dark);
+}
+
+
+/* ---------------login page css-------------- */
+
+
+.login {
+    padding: 200px 0;
+}
+
+.login-box {
+    max-width: 500px;
+    /* margin: 0 auto; */
+    margin-left: 550px;
+    margin-top: 50px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.login-section {
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    display: block;
+    color: var(--color-dark);
+}
+
+.login-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-section:hover {
+    background-color: #ddd;
+}
+/* --------------admin loging css-------------------- */
+.adminlog {
+    animation: sqbox2Ani forwards 2.5s ease;
+    padding: 100px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+
+
+
