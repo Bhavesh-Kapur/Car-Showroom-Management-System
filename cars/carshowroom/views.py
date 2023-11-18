@@ -91,3 +91,13 @@ def adminlogin(request):
 #         return render(request, 'adminlogin.html', {'error_message': 'Invalid credentials'})
 
 #     return render(request, 'adminlogin.html')
+
+
+
+def viewcontacts(request):
+    doubt=list(Query.objects.all())   #Cars.objects.filter(make='hyundai')
+    dic={'doubt':doubt}
+    print(dict)
+    return render(request,'viewcontacts.html',dic)
+    
+    # return render(request, 'viewcontacts.html')
