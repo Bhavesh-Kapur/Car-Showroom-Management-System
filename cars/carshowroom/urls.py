@@ -17,4 +17,6 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('adminlogin', views.adminlogin, name='adminlogin'),
     path('viewcontacts', views.viewcontacts, name='viewcontacts'),
+    path('editpage/<str:pk>/', views.editpage, name='editpage'),
+    path('edit', views.edit, name='edit')
 ]

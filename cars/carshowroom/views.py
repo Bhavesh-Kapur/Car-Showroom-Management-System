@@ -3,6 +3,7 @@ from carshowroom.models import Car,Customer,Query
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+import os
 
 # Create your views here.
 def admindashboard(request):
@@ -115,3 +116,28 @@ def viewcontacts(request):
     return render(request,'viewcontacts.html',dic)
     
     # return render(request, 'viewcontacts.html')
+
+
+def editpage(request, pk):
+    c = Car.objects.get(model=pk)
+
+    if request.method == "POST":
+        if len(request.FILES) != 0:
+            if len(c.img)>0:
+                os.remove(c.img.path)
+            c.img = request.FILES['image']
+        c.make = request.POST.get('make')
+        c.model = request.POST.get('model')
+        c.year = request.POST.get('year')
+        c.price = request.POST.get('price')
+
+        c.save()
+        messages.success(request, "Car details updated")
+        return redirect('viewinventory')
+    dic={"c":c}
+    return render(request, 'editpage.html', dic)
+
+
+
+def edit(request):
+    redirect('viewinventory')

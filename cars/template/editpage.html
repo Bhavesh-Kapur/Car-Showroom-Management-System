@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car - Car Showroom Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'addcar.css' %}">
+</head>
+<body>
+    
+    <header>
+        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
+        <h2>Welcome Admin</h2>
+        <a href="logout.html" class="btn">LogOut</a>
+        <a href="{% url 'admindashboard' %}" class="btn">Dashboard</a>
+    </header>
+
+    <main>
+        
+        <div class="content-container">
+            <h2> Edit Car</h2>
+
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" value="{{c.make}}" required>
+
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" value="{{c.model}}" required>
+
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" min="1900" max="2099" value="{{c.year}}" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" value="{{c.price}}" required>
+
+                <label for="image">Car Image:</label> 
+                            {% if c.img %}
+                                <td><img src="{{ c.img.url }}" alt="img here"></td>
+                            {% endif %}
+                 <input type="file" id="image" name="image" accept="image/*" > 
+
+
+                <button type="submit" class="btn">Edit Car</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
