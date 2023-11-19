@@ -41,15 +41,16 @@ def viewinventory(request):
     return render(request,'viewinventory.html',dic)
 
 
+
 def addcustomer(request):
     if request.method=='POST':
-        name=request.POST.get('name')
-        email=request.POST.get('email')
-        phone=request.POST.get('phone')
-        address=request.POST.get('address')
-        customer=Customer(name=name,phone=phone,email=email,address=address)
-        customer.save()
-        # print(name,email,phone,address)
+        c = Customer()
+        c.name=request.POST.get('name')
+        c.email=request.POST.get('email')
+        c.phone=request.POST.get('phone')
+        c.address=request.POST.get('address')
+        c.save()
+        print(c.name,c.email,c.phone,c.address)
     
     return render(request,'addcustomer.html')
 
