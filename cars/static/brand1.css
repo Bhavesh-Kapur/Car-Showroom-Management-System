@@ -73,12 +73,13 @@ nav{
 }
 
 .navspace{
-    margin-right: 791px;
+    margin-left: -250px;
 }
 
 .logoname{
     margin-left: -50px;
 }
+
 .nav-link li a{
     /* margin-left: 50px; */
     /* margin-right: 50px; */
