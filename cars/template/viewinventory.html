@@ -29,7 +29,7 @@
                         <th>Make</th>
                         <th>Model</th>
                         <th>Year</th>
-                        <!-- <th>Image</th> -->
+                        <th>Image</th>
                         <th>Price</th>
                         <!-- Add more columns for other car details -->
                     </tr>
@@ -41,7 +41,11 @@
                             <td>{{ car.make }}</td>
                             <td>{{ car.model }}</td>
                             <td>{{ car.year }}</td>
-                            <!-- <td><img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}"></td> -->
+                            {% if car.img %}
+                                <td><img src="{{ car.img.url }}" alt=""></td>
+                            {% else %}
+                                <td><img src="" alt="img error"></td>
+                            {% endif %}
                             <td>{{ car.price }}</td>
                             <!-- Add more columns for other car details -->
                         </tr>

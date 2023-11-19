@@ -20,7 +20,7 @@ def addcar(request):
             c.img = request.FILES['image']
         c.save()
         messages.success(request, f'New Car added to inventory' ,extra_tags='posted')
-        # return redirect('/')
+        return redirect('addcar')
     return render(request, 'addcar.html')
 
     #     make=request.POST.get('make')
