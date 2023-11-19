@@ -142,3 +142,17 @@ def editpage(request, pk):
 
 def edit(request):
     redirect('viewinventory')
+
+
+def viewcustomer(request):
+    cust=list(Customer.objects.all())   #Cars.objects.filter(make='hyundai')
+    dic={'cust':cust}
+    print(dic)
+    return render(request, 'viewcustomer.html', dic)
+
+def brand(request, pk):
+    t=pk
+    c=Car.objects.filter(make=pk)
+    dic={'c':c, 't':t}
+    print(dic)
+    return render(request, 'brand.html', dic )

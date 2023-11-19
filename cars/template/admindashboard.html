@@ -42,17 +42,17 @@
             <li><h4><i class="fas fa-users"></i>Customer Management</h4></li>
             <ul>
                 <li><a href="{% url 'addcustomer' %}"><i class="fa fa-user-plus"></i>Add New Customer</a></li>
-                <li><a href="viewcustomers.html"><i class="fa fa-users"></i>View Customers</a></li>
+                <li><a href="{% url 'viewcustomer' %}"><i class="fa fa-users"></i>View Customers</a></li>
                 <li><a href="{% url 'viewcontacts' %}"><i class="fa fa-doubts"></i>View Doubts</a></li>
-            </ul>
+            </ul>   
         </ul>
-        <ul>
+        <!-- <ul>
             <li><h4><i class="fas fa-chart-line"></i>Analytics and Reporting</h4></li>
             <ul>
                 <li><a href="/salesanalytics"><i class="fa fa-chart-line"></i>Sales Analytics</a></li>
                 <li><a href="inventoryreport.html"><i class="fa fa-file-alt"></i>Inventory Report</a></li>
             </ul>
-        </ul>
+        </ul> -->
     </aside>
 
     <main>

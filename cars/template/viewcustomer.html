@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Contacts/Doubts - Southern Sanandreas MotorCorp Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'viewinventory.css' %}">
+</head>
+<body>
+    
+    <header>
+        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
+        <h2>Welcome Admin</h2>
+        <a href="logout.html" class="btn">LogOut</a>
+        <a href="{% url 'admindashboard' %}" class="btn">Dashboard</a>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h2>Our Customers</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <!-- <th>Image</th> -->
+                        <!-- <th>Message</th> -->
+                        <th>Address</th>
+                        <!-- Add more columns for other car details -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through your cars data and populate the table rows -->
+                    {% for cust in cust %}
+                        <tr>
+                            <td>{{ cust.name }}</td>
+                            <td>{{ cust.phone }}</td>
+                            <td>{{ cust.email }}</td>
+                            <!-- <td><img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}"></td> -->
+                            <td>{{ cust.address }}</td>
+                            <!-- Add more columns for other car details -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

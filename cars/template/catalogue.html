@@ -32,12 +32,12 @@
         <div class="container">
             <h2>Catalogue</h2>
             <div class="brand-logos">
-                <a href="brand1.html" class="hyundai">
+                <a href="{% url 'brand' 'hyundai' %}" class="hyundai">
                     <img src="{% static 'hyundai Background Removed.png' %}" alt="Hyundai Logo" data-brand="Hyundai">
                     <span class="brand-name">Hyundai</span>
                 </a>
                 
-                <a href="brand1.html" class="honda">
+                <a href="{% url 'brand' 'honda' %}" class="honda">
                     <img src="{% static 'honda.jpeg' %}" alt="Honda Logo" data-brand="Honda">
                     <span class="brand-name">Honda</span>
                 </a>

@@ -18,5 +18,7 @@ urlpatterns = [
     path('adminlogin', views.adminlogin, name='adminlogin'),
     path('viewcontacts', views.viewcontacts, name='viewcontacts'),
     path('editpage/<str:pk>/', views.editpage, name='editpage'),
-    path('edit', views.edit, name='edit')
+    # path('edit', views.edit, name='edit'),
+    path('viewcustomer', views.viewcustomer, name='viewcustomer'),
+    path('brand/<str:pk>/', views.brand, name="brand"),
 ]
