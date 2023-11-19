@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Southern Sanandreas MotorCorp</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Book a Test Drive - Southern Sanandreas Motor Corp</title>
+    <link rel="stylesheet" href="{% static 'booktestdrive.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -31,29 +31,39 @@
             </ul>
         </div>
     </nav>
-
-    <section class="contact">
+    <section class="test-drive-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have questions or need assistance? Reach out to us!</p>
-            <form action="contact" method="post">
-                {% csrf_token %}
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+            <h2>Book a Test Drive</h2>
+            <p>Experience the thrill firsthand. Schedule a test drive with Southern Sanandreas Motor Corp.</p>
 
-                <label for="email">Your Email:</label>
+            <form action="" method="post">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="phone">Your Phone No.:</label>
-                <input type="number" id="phone" name="phone" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
 
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="car-model">Preferred Car Model:</label>
+                <select id="car-model" name="car-model" required>
+                    <option value="model1">Model 1</option>
+                    <option value="model2">Model 2</option>
+                    <option value="model3">Model 3</option>
+                </select>
 
-                <button type="submit">Submit</button>
+                <label for="preferred-date">Preferred Date:</label>
+                <input type="date" id="preferred-date" name="preferred-date" required>
+
+                <button type="submit" class="btn">Submit</button>
             </form>
         </div>
     </section>
-<div class="sq-box2">hi</div>
+
+    <div class="sq-box2">hi</div>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
 </body>
 </html>

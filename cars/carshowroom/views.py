@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from carshowroom.models import Car,Customer,Query
+from carshowroom.models import Car,Customer,Query,TestDrive
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -16,6 +16,7 @@ def addcar(request):
         c.model = request.POST.get('model')
         c.year = request.POST.get('year')
         c.price = request.POST.get('price')
+        c.des = request.POST.get('des')
 
         if len(request.FILES)!= 0:
             c.img = request.FILES['image']
@@ -131,6 +132,7 @@ def editpage(request, pk):
         c.model = request.POST.get('model')
         c.year = request.POST.get('year')
         c.price = request.POST.get('price')
+        c.des = request.POST.get('des')
 
         c.save()
         messages.success(request, "Car details updated")
@@ -156,3 +158,9 @@ def brand(request, pk):
     dic={'c':c, 't':t}
     print(dic)
     return render(request, 'brand.html', dic )
+
+def booktestdrive(request):
+    return render(request, 'booktestdrive.html')
+
+def testdrive(request):   
+    return render(request, 'testdrive.html')

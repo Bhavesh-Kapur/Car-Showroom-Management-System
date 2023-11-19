@@ -72,3 +72,21 @@ th {
         overflow-x: auto;
     }
 }
+
+.content-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content-container th, .content-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}

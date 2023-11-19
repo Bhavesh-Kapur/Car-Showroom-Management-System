@@ -6,6 +6,7 @@ class Car(models.Model):
     year = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     img = models.ImageField(upload_to="images/", null=True, default=None)
+    des = models.CharField(max_length=1000, default='Default Description')
 
 class Booking(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
@@ -24,3 +25,11 @@ class Query(models.Model):
     phone=models.IntegerField()
     email=models.CharField(max_length=50)
     doubt=models.CharField(max_length=400)
+
+class TestDrive(models.Model):
+    name=models.CharField(max_length=100)
+    phone=models.IntegerField()
+    email=models.CharField(max_length=50)
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    date = models.DateField()

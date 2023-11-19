@@ -39,9 +39,10 @@
             <h2>{{t}}</h2>
             {% for c in c %}
             <div class="model-item">
-                <img src="model1_image.jpg" alt="Model 1">
+                <img src="{{c.img.url}}" alt="Model 1">
                 <h3>{{c.model}}</h3>
-                <p>Description of Model 1 goes here.</p>
+                <p>Price: {{c.price}}</p>
+                <p>Description: {{c.des}}</p>
             </div>
             {% endfor %}
             <!-- <div class="model-item">
