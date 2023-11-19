@@ -491,5 +491,41 @@ button:hover {
 
 
 
+/* -------------- brand models css -------------- */
+
+
+.brand-models {
+    padding: 80px 0;
+}
+
+.brand-models h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--color-dark);
+}
+
+.model-item {
+    margin-bottom: 40px;
+}
+
+.model-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.model-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: var(--color-dark);
+}
+
+.model-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-dark);
+}
+
 
 
