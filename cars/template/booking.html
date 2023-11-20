@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Test Drive - Southern Sanandreas Motor Corp</title>
-    <link rel="stylesheet" href="{% static 'booktestdrive.css' %}">
+    <title>Animated  cars Website</title>
+    <!-- ..................Custom Css Link................... -->
+    <link rel="stylesheet" href="{% static 'booking.css' %}">
+    <!-- ..................FontAwesome Link................... -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
+
 <body>
     <nav>
         <div class="container nav-container">
@@ -18,9 +22,9 @@
             <div class="navspace">
             <ul class="nav-link">
                 <li><a href="{% url 'about' %}" style="--i:1;">Home</a></li>
-                <li><a href="{% url 'catalogue' %}" style="--i:3;">Catalog</a></li>
+                <li><a href="{% url 'catalogue' %}" style="--i:3;" class="active">Catalog</a></li>
                 <li><a href="{% url 'featured' %}" style="--i:4;">Featured</a></li>
-                <li><a href="{% url 'contact' %}" style="--i:5;" class="active">Contact</a></li>
+                <li><a href="{% url 'contact' %}" style="--i:5;" >Contact</a></li>
                 <li><a href="{% url 'login' %}" style="--i:6;">Login</a></li>
             </ul>
             </div>
@@ -31,23 +35,21 @@
             </ul>
         </div>
     </nav>
-    <section class="test-drive-section">
-        <div class="container">
-            <h2>Book a Test Drive</h2>
-            <p>Experience the thrill firsthand. Schedule a test drive with Southern Sanandreas Motor Corp.</p>
 
-            <form action="" method="post">
-                {% csrf_token %}
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="name" required>
+    <main class="booking">
+        <form method="post" action="">
+            {% csrf_token %}
+            <!-- Add your form fields for booking, e.g., name, email, selected car, date, etc. -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Phone:</label>
+            <input type="number" id="phone" name="phone" required>
 
-                <label for="make">Preferred Car Brand:</label>
+            <label for="make">Preferred Car Brand:</label>
                 <select id="make" name="make" required>
                     {% for ci in ci %}
                     <option value="{{ci.make}}">{{ci.make}}</option>
@@ -61,17 +63,19 @@
                     {% endfor %}
                 </select>
 
-                <label for="preferred-date">Preferred Date:</label>
-                <input type="date" id="preferred-date" name="date" required>
+            <label for="date">Booking Date:</label>
+            <input type="date" id="date" name="date" required>
 
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
-    </section>
+            <!-- <label for="price">Booking Price:</label>
+            <h1 class="price" name="price">{{ci.price}}</h1> -->
 
+            <button type="submit">Book Now</button>
+        </form>
+    </main>
     <div class="sq-box2">hi</div>
+    <!-- Add your footer or other sections if needed -->
     <footer>
-        <!-- Footer content goes here -->
+        <p>&copy; 2023 Car Showroom</p>
     </footer>
 </body>
 </html>

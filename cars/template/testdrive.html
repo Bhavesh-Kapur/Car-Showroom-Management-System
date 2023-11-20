@@ -29,21 +29,29 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <!-- <th>Image</th> -->
+                        <th>Car Make</th>
                         <th>Car Model</th>
+                        <th>Preferred Date</th>
+                        <!-- <th>Status</th> -->
+
                         <!-- Add more columns for other car details -->
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Loop through your cars data and populate the table rows -->
-                    {% for doubt in doubt %}
+                    {% for c in c %}
                         <tr>
-                            <td>{{ doubt.name }}</td>
-                            <td>{{ doubt.phone }}</td>
-                            <td>{{ doubt.email }}</td>
-                            <!-- <td><img src="{{ car.image.url }}" alt="{{ car.make }} {{ car.model }}"></td> -->
-                            <td>{{ doubt.doubt }}</td>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.phone }}</td>
+                            <td>{{ c.email }}</td>
+                            <td>{{ c.make }}</td>
+                            <td>{{ c.model }}</td>
+                            <td>{{ c.date }}</td>
+                            <!-- <td>
+                                <input type="radio">{{c.status}}
+                            </td> -->
                             <!-- Add more columns for other car details -->
+                            <!-- <td><textarea name="status" id="status" cols="30" rows="10"></textarea></td> -->
                         </tr>
                     {% endfor %}
                 </tbody>

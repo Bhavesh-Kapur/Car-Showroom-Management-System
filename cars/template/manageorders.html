@@ -26,25 +26,25 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Order ID</th>
-                        <th>Customer Name</th>
-                        <th>Car Model</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th>Status</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Date</th>
                         <!-- Add more columns for other order details -->
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Loop through your orders data and populate the table rows -->
-                    {% for order in orders %}
+                    {% for c in c %}
                         <tr>
-                            <td>{{ order.order_id }}</td>
-                            <td>{{ order.customer_name }}</td>
-                            <td>{{ order.car_model }}</td>
-                            <td>{{ order.quantity }}</td>
-                            <td>${{ order.total_price }}</td>
-                            <td>{{ order.status }}</td>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.phone }}</td>
+                            <td>{{ c.email }}</td>
+                            <td>{{ c.make }}</td>
+                            <td>{{ c.model }}</td>
+                            <td>{{ c.date }}</td>
                             <!-- Add more columns for other order details -->
                         </tr>
                     {% endfor %}

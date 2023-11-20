@@ -33,3 +33,12 @@ class TestDrive(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     date = models.DateField()
+    status = models.BooleanField(default=False)
+
+class BookingCar(models.Model):
+    name=models.CharField(max_length=100)
+    phone=models.IntegerField()
+    email=models.CharField(max_length=50)
+    date = models.DateField()
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from carshowroom.models import Car,Customer,Query,TestDrive
+from carshowroom.models import Car,Customer,Query,TestDrive,BookingCar
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -57,7 +57,9 @@ def addcustomer(request):
 
 
 def manageorders(request):
-    return render(request,'manageorders.html')
+    c = BookingCar.objects.all()
+    dic={'c':c}
+    return render(request,'manageorders.html', dic)
 
 
 
@@ -160,7 +162,44 @@ def brand(request, pk):
     return render(request, 'brand.html', dic )
 
 def booktestdrive(request):
-    return render(request, 'booktestdrive.html')
+    ci = Car.objects.all()
+    # mv = ci.make
+    # print(mv)
+    dic = {'ci':ci}
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        make = request.POST.get('make')
+        model = request.POST.get('model')
+        date = request.POST.get('date')
+        testdrive=TestDrive(name=name,phone=phone,email=email,make=make,model=model,date=date)
+        testdrive.save()
+
+    return render(request, 'booktestdrive.html',dic)
 
 def testdrive(request):   
-    return render(request, 'testdrive.html')
+    c = TestDrive.objects.all()
+    dic={'c':c}
+    return render(request, 'testdrive.html',dic)
+
+# def editdrive(request):
+
+def booking(request):
+    ci = Car.objects.all()
+    # mv = ci.make
+    # print(mv)
+    dic = {'ci':ci}
+    if request.method == "POST":
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        make = request.POST.get('make')
+        model = request.POST.get('model')
+        date = request.POST.get('date')
+        bookingcar=BookingCar(name=name,phone=phone,email=email,make=make,model=model,date=date)
+        bookingcar.save()
+
+
+    return render(request,"booking.html", dic)
