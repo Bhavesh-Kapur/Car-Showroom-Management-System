@@ -4,74 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Showroom Management System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        header img {
-            width: 50px; /* Adjust the width as needed */
-            height: 50px; /* Adjust the height as needed */
-            margin-right: 10px;
-        }
-
-        section {
-            margin: 20px;
-        }
-
-        .car-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .car-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            width: 200px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="volvo_logo.png" alt="Volvo Logo"> <!-- Replace with the actual path to your Volvo logo -->
-        <h1>Car Showroom Management System</h1>
     </header>
 
     <section>
         <h2>Available Cars</h2>
         <div class="car-list" id="carList">
-            <!-- Car cards will be dynamically added here -->
         </div>
     </section>
 
     <script>
-        // Dummy data for demonstration purposes
         const cars = [
-            { id: 4, make: 'Volvo', model: 'XC90', year: 2022, price: 50000 },
-            { id: 5, make: 'Volvo', model: 'S60', year: 2022, price: 35000 },
-            { id: 6, make: 'Volvo', model: 'V60', year: 2022, price: 40000 },
-            { id: 7, make: 'Volvo', model: 'XC40', year: 2022, price: 32000 }
-            // Add more Volvo models as needed
+            { id: 4, make: 'Volvo', model: 'XC90', year: 2023, price: 6000000 },
+            { id: 5, make: 'Volvo', model: 'S60', year: 2023, price: 4000000 },
+            { id: 6, make: 'Volvo', model: 'V60', year: 2023, price: 4500000 },
+            { id: 7, make: 'Volvo', model: 'XC40', year: 2023, price: 3800000 }
         ];
 
-        // Function to format currency as INR
         function formatCurrencyINR(price) {
-            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(price);
+            const conversionRate = 75;
+            const inrPrice = price * conversionRate;
+            return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(inrPrice);
         }
 
-        // Function to render car cards
         function renderCars() {
             const carList = document.getElementById('carList');
             carList.innerHTML = '';
@@ -87,8 +44,6 @@
                 carList.appendChild(card);
             });
         }
-
-        // Initial rendering
         renderCars();
     </script>
 </body>
