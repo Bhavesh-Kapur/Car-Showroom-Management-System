@@ -24,4 +24,5 @@ urlpatterns = [
     path('booktestdrive', views.booktestdrive, name="booktestdrive"),
     path('testdrive', views.testdrive, name="testdrive"),
     path('booking', views.booking, name="booking"),
+    path('logoutuser/', views.logoutuser, name='logoutuser'),
 ]

@@ -37,18 +37,13 @@
         <div class="container">
             <h2>Admin Login</h2>
             <p></p>
-            <form action="adminlogin" method="post">
+            <form action="/adminlogin" method="post">
                 {% csrf_token %}  
                 <label for="name">Username</label>
                 <input type="text" id="name" name="username" required>
 
-                <!-- <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required> -->
-
-                <!-- <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea> -->
                 <label for="password" class="name">Password</label>
-                <input type="text" class="password" required>
+                <input type="text" class="password" required name="password">
                 <button type="submit">Submit</button>
             </form>
         </div>

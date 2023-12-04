@@ -88,13 +88,27 @@ def contact(request):
     return render(request,'contact.html')
 
 
-def login(request):
-    return render(request, 'login.html')
+
 
 
 
 def adminlogin(request):
+    if not request.user.is_anonymous:
+        return redirect("/admindashboard")
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        if 'T' in username or 'S' in username:
+            return redirect('/')
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('admindashboard')
+        return render(request, 'adminlogin.html')
+
     return render(request, 'adminlogin.html')
+
 
 # def adminlogin(request):
 #     if not request.user.is_anonymous:
@@ -203,3 +217,9 @@ def booking(request):
 
 
     return render(request,"booking.html", dic)
+
+
+
+def logoutuser(request):
+    logout(request)
+    return redirect('/')

@@ -13,11 +13,17 @@
 <body>
     
     <header>
-        <h1><i class="fas fa-car"></i>Car Showroom Management System</h1>
-        <h2>Welcome Admin</h2>
-        <a href="logout.html" class="btn">LogOut</a>
-    </header>
+        <h1><i class="fas fa-car"></i>Southern Sanandreas Motor Corp.</h1>
+        <h2>Welcome Manager</h2>
+        <img src="{% static 'logo.png' %}" alt="">
+        <div>
+        <a href="{% url 'logoutuser' %}" class="btn">LogOut</a>
+    </div>
+            
+            <!-- Content section will go here based on the selected option from the sidebar -->
 
+    </header>
+   
     <aside>
         <header>
             <div>
@@ -35,7 +41,7 @@
             <li><h4><i class="fas fa-shopping-cart"></i>Sales and Orders</h4></li>
             <ul>
                 <li><a href="{% url 'manageorders' %}"><i class="fa fa-shopping-basket"></i>Manage Orders</a></li>
-                <li><a href="salesreport.html"><i class="fa fa-chart-bar"></i>Sales Report</a></li>
+                <!-- <li><a href="salesreport.html"><i class="fa fa-chart-bar"></i>Sales Report</a></li> -->
             </ul>
         </ul>
         <ul>
@@ -56,10 +62,6 @@
         </ul> -->
     </aside>
 
-    <main>
-        <div class="content-container">
-            <!-- Content section will go here based on the selected option from the sidebar -->
-        </div>
-    </main>
+    
 </body>
 </html>
